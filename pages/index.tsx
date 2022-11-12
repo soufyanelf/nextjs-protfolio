@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       <main className='p-4 max-w-6xl w-100 m-auto '>
         <Navbar />
         <Hero />
+        <Footer />
       </main>
     </div>
   )
