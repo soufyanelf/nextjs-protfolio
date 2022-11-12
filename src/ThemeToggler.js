@@ -8,17 +8,19 @@ const ThemeToggler = () => {
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
   return (
+    <>
     <button
       className="flex justify-center items-center w-max"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       aria-label="Toggle Dark Mode"
     >
       {theme === 'light' ? (
-        <FiMoon className="text-black dark:text-white" title="Switch to dark theme" />
-      ) : (
-        <FiSun className="text-black dark:text-white" title="Switch to light theme" />
+        <FiMoon className="text-black" title="Switch to dark theme" />
+        ) : (
+        <FiSun className="text-white" title="Switch to light theme" />
       )}
     </button>
+    </>
   );
 };
 
