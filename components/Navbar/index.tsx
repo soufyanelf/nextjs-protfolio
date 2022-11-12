@@ -18,7 +18,7 @@ const Navbar: FunctionComponent = () => {
         <div>
             <ul className='flex justify-center items-center gap-6'>
                 <li className='font-semibold text-black text-sm dark:text-gray-300' title="About">
-                    <Link href="">About</Link>
+                    <Link href="/about">About</Link>
                 </li>
                 <li className='font-semibold text-black text-sm dark:text-gray-300' title="Projects">
                     <Link href="">Projects</Link>

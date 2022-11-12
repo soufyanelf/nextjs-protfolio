@@ -8,3 +8,8 @@
 *, html, body {
     font-family: 'Montserrat', sans-serif;
 }
+
+::selection {
+    background-color: rgb(95, 0, 0);
+    color: white;
+}
