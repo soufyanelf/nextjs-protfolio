@@ -21,7 +21,7 @@ const Navbar: FunctionComponent = () => {
                     <Link href="/about">About</Link>
                 </li>
                 <li className='font-semibold text-black text-sm dark:text-gray-300' title="Projects">
-                    <Link href="">Projects</Link>
+                    <Link href="/projects">Projects</Link>
                 </li>
                 <li className='font-semibold text-black text-sm dark:text-gray-300' title="Get in touch">
                     <Link href="">Get in touch</Link>
