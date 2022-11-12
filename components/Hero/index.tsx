@@ -1,12 +1,19 @@
-import Link from 'next/link';
 import { FunctionComponent } from 'react';
+import Link from 'next/link';
 
 import { FiTwitter, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { BsFillPlayCircleFill } from 'react-icons/bs';
 
 const Hero: FunctionComponent = () => {
+
+  const playTheme = () => {
+    let game_of_thrones_theme: any = new Audio("/GOT-Theme.mp3");
+    game_of_thrones_theme.play();
+  }
+
   return (
-    <div className='flex flex-col justify-center items-center sm:py-32 py-28 gap-6 px-4'>
-        <div className='lex justify-center items-center'>
+    <div className='flex flex-col justify-center items-center sm:py-30 py-28 gap-6 px-4'>
+        <div className='relative flex justify-center items-center'>
             <img 
                 src="/evil-ismail.jpg"
                 alt="Ismail Boularbah" style={{
@@ -15,6 +22,12 @@ const Hero: FunctionComponent = () => {
                 margin: 'auto',
                 borderRadius: '50%'
             }}/>
+            <button 
+                onClick={() => {playTheme()}}
+                title="Play Game Of Thrones Theme <3"
+                className='p-0.5 bg-white rounded-full absolute -right-2 bottom-8 text-3xl text-black dark:text-white dark:bg-stone-900 active:scale-95 cursor-none sm:cursor-pointer'>
+                <BsFillPlayCircleFill className='m-0' />
+            </button>
         </div>
         <div className='flex flex-col justify-center items-center gap-4'>
             <h2 className='text-center font-bold text-2xl'>

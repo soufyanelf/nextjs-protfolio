@@ -8,7 +8,7 @@ const About: NextPage = () => {
   return (
     <div className='relative py-4 sm:min-h-screen min-h-screen'>
       <Head>
-        <title>Ismailium - About</title>
+        <title>Ismailium - Who am i?</title>
         <link rel="icon" href="/Fez-Hat.png" />
       </Head>
 
