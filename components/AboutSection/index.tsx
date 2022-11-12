@@ -5,12 +5,12 @@ import { HiOutlineNewspaper } from 'react-icons/hi';
 
 const AboutSection: FunctionComponent = () => {
   return (
-    <div className='sm:py-16 py-10 flex flex-col justify-center sm:items-start items-center gap-4'>
-        <h1 className='flex justify-start items-center font-bold text-2xl gap-2'>
+    <div className='px-1 sm:py-16 py-10 flex flex-col justify-center sm:items-start items-center gap-4'>
+        <h1 className='flex justify-start items-center font-bold sm:text-2xl text-xl gap-2'>
             <span>Yoo</span>
             <SiHey />
         </h1>
-        <h2 className='text-3xl font-bold'>Who am i? 😃</h2>
+        <h2 className='sm:text-3xl text-2xl font-bold'>Who am i? 😃</h2>
         <p className='sm:text-left text-justify sm:text-md text-sm leading-8 sm:leading-10'>
             I am <b>Ismail Boularbah</b> aka <b>Ismailium</b>, Cuber and Frontend JavaScript Developer.
             I really like writing code and building responsive web apps & designs, Especially in Javascript.

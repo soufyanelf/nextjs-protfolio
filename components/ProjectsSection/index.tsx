@@ -7,7 +7,7 @@ import { AiOutlineLink, AiOutlineGithub } from 'react-icons/ai';
 const ProjectsSection: FunctionComponent = () => {
   return (
     <div className="sm:py-16 py-10 sm:text-left text-center">
-        <h2 className='text-3xl font-bold'>Thing i built 🚀</h2>
+        <h2 className='sm:text-3xl text-2xl font-bold'>Thing i built 🚀</h2>
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-4">
             {projects.map((project: any, index: number) => (
                 <div key={index} className="text-left dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:border-neutral-800  border border-gray-100 bg-gray-50 hover:bg-gray-100 p-4 rounded-md flex flex-col gap-4" title={project.title}>
