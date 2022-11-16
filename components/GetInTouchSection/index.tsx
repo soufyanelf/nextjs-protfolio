@@ -18,7 +18,7 @@ const GetInTouchSection: FunctionComponent = () => {
             </button>
         </div>
         <h3 className='py-4 text-xl font-bold'>
-            ⎯ Find me on Twitter
+            ⎯ Find me on Twitter 👇
         </h3>
         <div className='grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4'>
             <TwitterTweetEmbed tweetId={'1567528935658766337'} />
