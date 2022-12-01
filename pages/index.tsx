@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
-    <div className="relative py-4 sm:min-h-screen min-h-screen">
+    <div className="relative py-4 sm:min-h-screen">
       <Head>
         <title>Ismailium - Layhdi Chabab</title>
         <link rel="icon" href="/Fez-Hat.png" />
