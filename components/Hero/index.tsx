@@ -1,17 +1,26 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState, useRef } from "react";
 import Link from "next/link";
 
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
-import { BsFillPlayCircleFill } from "react-icons/bs";
+import { BsFillPlayCircleFill, BsFillPauseCircleFill } from "react-icons/bs";
 
 const Hero: FunctionComponent = () => {
-  const playTheme = () => {
-    let game_of_thrones_theme: any = new Audio("/GOT-Theme.mp3");
-    game_of_thrones_theme.play();
-  };
+  const [isThemePaused, setThemePaused]: any = useState(true);
+  const audioRef: any = useRef();
+
+  const toggle = () => {
+    if (isThemePaused === true) {
+      audioRef.current.play();
+      setThemePaused(false);
+    } else {
+      audioRef.current.pause();
+      setThemePaused(true);
+    }
+  }
 
   return (
     <div className="flex flex-col justify-center items-center sm:py-30 py-24 gap-6 px-4">
+      <audio ref={audioRef} src="/GOT-Theme.mp3" />
       <div className="relative flex justify-center items-center">
         <img
           src="/evil-ismail.jpg"
@@ -24,13 +33,14 @@ const Hero: FunctionComponent = () => {
           }}
         />
         <button
-          onClick={() => {
-            playTheme();
-          }}
-          title="Play Game Of Thrones Theme <3"
+          onClick={() => {toggle()}}
           className="p-0.5 bg-white rounded-full absolute -right-2 bottom-8 text-3xl text-black dark:text-white dark:bg-stone-900 active:scale-95 cursor-none sm:cursor-pointer"
         >
-          <BsFillPlayCircleFill className="m-0" />
+          {isThemePaused === false ? (
+            <BsFillPauseCircleFill className="m-0" title="Pause Game Of Thrones Theme <3" />
+          ) : (
+            <BsFillPlayCircleFill className="m-0" title="Play Game Of Thrones Theme <3" />
+          )}
         </button>
         <div>
           <img
