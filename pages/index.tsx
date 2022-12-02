@@ -10,6 +10,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Ismailium - Layhdi Chabab</title>
         <link rel="icon" href="/Fez-Hat.png" />
+        <meta type="description" content="Frontend Developer Intern @Yutapp, Cuber, Chess, And Formula 1🏎️ Lover <3." />
       </Head>
 
       <main className="p-4 max-w-6xl w-100 m-auto ">
