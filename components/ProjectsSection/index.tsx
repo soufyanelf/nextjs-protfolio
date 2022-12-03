@@ -12,11 +12,11 @@ const ProjectsSection: FunctionComponent = () => {
         {projects.map((project: any, index: number) => (
           <div
             key={index}
-            className="text-left dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:border-neutral-800  border border-gray-100 bg-gray-50 hover:bg-gray-100 p-4 rounded-md flex flex-col gap-4"
+            className="text-left dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:border-neutral-800 border border-gray-150 bg-gray-100 hover:bg-gray-50 p-4 rounded-md flex flex-col gap-4"
             title={project.title}
           >
             <h3 className="text-xl font-bold">{project.title}</h3>
-            <p className="text-xs dark:text-gray-300 text-black leading-6">
+            <p className="text-xs dark:text-gray-300 text-black leading-6 font-semibold">
               {project.description}
             </p>
             <span className="text-sm font-bold pb-1">{project.tools}</span>
