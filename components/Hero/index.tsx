@@ -16,10 +16,10 @@ const Hero: FunctionComponent = () => {
       audioRef.current.pause();
       setThemePaused(true);
     }
-  }
+  };
 
   return (
-    <div className="flex flex-col justify-center items-center sm:py-30 py-24 gap-6 px-4">
+    <div className="flex flex-col justify-center items-center sm:py-30 py-20 gap-6 px-4">
       <audio ref={audioRef} src="/GOT-Theme.mp3" />
       <div className="relative flex justify-center items-center">
         <img
@@ -33,18 +33,27 @@ const Hero: FunctionComponent = () => {
           }}
         />
         <button
-          onClick={() => {toggle()}}
+          onClick={() => {
+            toggle();
+          }}
           className="p-0.5 bg-white rounded-full absolute -right-2 bottom-8 text-3xl text-black dark:text-white dark:bg-stone-900 active:scale-95 cursor-none sm:cursor-pointer"
         >
           {isThemePaused === false ? (
-            <BsFillPauseCircleFill className="m-0" title="Pause Game Of Thrones Theme <3" />
+            <BsFillPauseCircleFill
+              className="m-0"
+              title="Pause Game Of Thrones Theme <3"
+            />
           ) : (
-            <BsFillPlayCircleFill className="m-0" title="Play Game Of Thrones Theme <3" />
+            <BsFillPlayCircleFill
+              className="m-0"
+              title="Play Game Of Thrones Theme <3"
+            />
           )}
         </button>
         <div>
           <img
             src="/Fez-Hat.png"
+            alt="Traditional Moroccan Hat"
             height="30px"
             width="30px"
             className="absolute top-8 -left-2"
@@ -60,14 +69,20 @@ const Hero: FunctionComponent = () => {
       </div>
       <div className="flex justify-center items-center">
         <ul className="flex justify-center items-center gap-6">
-          <li className="sm:text-2xl text-xl" title="Twitter">
+          <li
+            className="sm:text-2xl text-xl duration-150 hover:-translate-y-1"
+            title="Twitter"
+          >
             <Link href="https://twitter.com/boularbahsmail" legacyBehavior>
               <a target="_blank">
                 <FiTwitter />
               </a>
             </Link>
           </li>
-          <li className="sm:text-2xl text-xl" title="LinkedIn">
+          <li
+            className="sm:text-2xl text-xl duration-150 hover:-translate-y-1"
+            title="LinkedIn"
+          >
             <Link
               href="https://www.linkedin.com/in/ismail-boularbah-a0926919b/"
               legacyBehavior
@@ -77,7 +92,10 @@ const Hero: FunctionComponent = () => {
               </a>
             </Link>
           </li>
-          <li className="sm:text-2xl text-xl" title="GitHub">
+          <li
+            className="sm:text-2xl text-xl duration-150 hover:-translate-y-1"
+            title="GitHub"
+          >
             <Link href="https://github.com/boularbahsmail/" legacyBehavior>
               <a target="_blank">
                 <FiGithub />
