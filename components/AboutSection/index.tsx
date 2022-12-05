@@ -25,7 +25,7 @@ const AboutSection: FunctionComponent = () => {
         Still writing lines of code while staying hydrated.
       </sup>
       <b>Chabab!!, Drink your water 🥤</b>
-      <Link href="/Boularbah-Ismail-Resume.pdf" legacyBehavior>
+      <Link href="/Ismail-Boularbah-Resume.pdf" legacyBehavior>
         <a
           target="_blank"
           className="bg-black text-white dark:text-black dark:bg-white font-semibold py-2 px-4 mt-4 rounded text-sm flex justify-center items-center gap-2 active:scale-95"
