@@ -59,15 +59,7 @@ const data: Object[] = [
     tools: "Html • Css • JavaScript • GitHub API",
     demo: "https://github-profiles-cc.netlify.app/",
     github: "https://github.com/boularbahsmail/GitHub-profiles",
-  },
-  {
-    id: 8,
-    title: "Iscord - Discord Clone :)",
-    description:
-      "Real time chat web app using NodeJS, ExpressJS and Socket.io, It includes two pages, Login page where you login using a username and Messages Pages pages that shows you the messages and the online users.",
-    tools: "Node.js • Express.js • Socket.io",
-    demo: "https://iscordma.herokuapp.com/",
-  },
+  }
 ];
 
 export default data;
