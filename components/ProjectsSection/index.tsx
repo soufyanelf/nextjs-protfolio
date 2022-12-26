@@ -1,10 +1,8 @@
 import React, { FunctionComponent } from "react";
 import Link from "next/link";
-import projects from "./data/index";
 
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
-
-const ProjectsSection: FunctionComponent = () => {
+const ProjectsSection: FunctionComponent = ({ projects }: any) => {
   return (
     <div className="sm:py-16 py-10 sm:text-left text-center">
       <h2 className="sm:text-3xl text-2xl font-bold">Thing i built 🚀</h2>
@@ -12,16 +10,22 @@ const ProjectsSection: FunctionComponent = () => {
         {projects.map((project: any, index: number) => (
           <div
             key={index}
-            className="text-left dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:border-neutral-800 border border-gray-150 bg-gray-100 hover:bg-gray-50 p-4 rounded-md flex flex-col gap-4"
+            className="h-max text-left dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:border-neutral-800 border border-gray-150 bg-gray-100 hover:bg-gray-50 p-4 rounded-md flex flex-col gap-4"
             title={project.title}
           >
             <h3 className="text-xl font-bold">{project.title}</h3>
             <p className="text-xs dark:text-gray-300 text-black leading-6 font-semibold">
               {project.description}
             </p>
-            <span className="text-sm font-bold pb-1">{project.tools}</span>
+            <div className="flex justify-start items-center gap-2 flex-wrap">
+              {project.tools.map((tool: any, index: number) => (
+                <span className="text-sm font-bold pb-1" key={index}>
+                  • {tool}
+                </span>
+              ))}
+            </div>
             <div className="flex justify-start items-center gap-2">
-              <Link href={project.demo} legacyBehavior>
+              <Link href={`${project.demo}`} legacyBehavior>
                 <a
                   title="Website"
                   target="_blank"
@@ -32,7 +36,7 @@ const ProjectsSection: FunctionComponent = () => {
                 </a>
               </Link>
               {project.github ? (
-                <Link href={project.github} legacyBehavior>
+                <Link href={`${project.github}`} legacyBehavior>
                   <a
                     title="GitHub Repository"
                     target="_blank"
