@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import Link from "next/link";
 
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
-const ProjectsSection: FunctionComponent = ({ projects }: any) => {
+const ProjectsSection = ({ projects }: any) => {
   return (
     <div className="sm:py-16 py-10 sm:text-left text-center">
       <h2 className="sm:text-3xl text-2xl font-bold">Thing i built 🚀</h2>
