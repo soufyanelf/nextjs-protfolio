@@ -6,6 +6,7 @@ import { FiLoader } from "react-icons/fi";
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
 const ProjectsSection = ({ projects }: any) => {
   const [projectsLength, setProjectsLength] = useState(3);
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="sm:py-16 py-10 sm:text-left text-center">
@@ -63,11 +64,17 @@ const ProjectsSection = ({ projects }: any) => {
           <button
             className="flex justify-center items-center gap-2 py-2 px-4 rounded font-semibold text-sm dark:bg-white dark:text-black text-white bg-black active:scale-95"
             onClick={() => {
-              setProjectsLength(projectsLength * 2);
+              setLoading(true);
+              setTimeout(() => {
+                setProjectsLength(projectsLength * 2);
+                setLoading(false);
+              }, 1000);
             }}
             title="Load more projects"
           >
-            <FiLoader />
+            <FiLoader
+              className={`text-md ${loading == true ? "spin" : null}`}
+            />
             <span>Load more projects</span>
           </button>
         </div>
