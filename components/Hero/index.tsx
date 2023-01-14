@@ -3,9 +3,13 @@ import Link from "next/link";
 
 import { FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import { BsFillPlayCircleFill, BsFillPauseCircleFill } from "react-icons/bs";
+import { HeroDataType } from "../../types";
 
-// type needed
-const Hero: FunctionComponent = ({ IndexData }) => {
+interface Props {
+  heroData: HeroDataType
+}
+
+const Hero: FunctionComponent<Props> = ({ heroData }) => {
   const [isThemePaused, setThemePaused]: any = useState(true);
   const audioRef: any = useRef();
 
@@ -22,11 +26,11 @@ const Hero: FunctionComponent = ({ IndexData }) => {
   return (
     <div className="flex flex-col justify-center items-center sm:py-30 py-20 gap-6 px-4">
       <audio ref={audioRef} src="/GOT-Theme.mp3" />
-      {IndexData?.profileImg &&
+      {heroData?.profileImg &&
         <div className="relative flex justify-center items-center">
           <img
-            src={IndexData?.profileImg?.src}
-            alt={IndexData?.profileImg?.alt}
+            src={heroData?.profileImg?.src}
+            alt={heroData?.profileImg?.alt}
             style={{
               maxWidth: "170px",
               width: "100%",
@@ -63,31 +67,31 @@ const Hero: FunctionComponent = ({ IndexData }) => {
           </div>
         </div>}
       <div className="flex flex-col justify-center items-center gap-4">
-        <h2 className="text-center font-bold text-2xl">{IndexData?.name}</h2>
-        <p className="max-w-md w-100 m-auto text-center text-sm sm:text-md leading-6" dangerouslySetInnerHTML={{ __html: IndexData?.description }} />
+        <h2 className="text-center font-bold text-2xl">{heroData?.name}</h2>
+        <p className="max-w-md w-100 m-auto text-center text-sm sm:text-md leading-6" dangerouslySetInnerHTML={{ __html: heroData?.description }} />
       </div>
       <div className="flex justify-center items-center">
         <ul className="flex justify-center items-center gap-6">
-          {IndexData?.social?.twitter &&
+          {heroData?.social?.twitter &&
             <li
               className="sm:text-2xl text-xl duration-150 hover:-translate-y-1"
               title="Twitter"
             >
-              <Link href={IndexData?.social?.twitter} legacyBehavior>
+              <Link href={heroData?.social?.twitter} legacyBehavior>
                 <a target="_blank">
                   <FiTwitter />
                 </a>
               </Link>
             </li>}
 
-          {IndexData?.social?.linkedin &&
+          {heroData?.social?.linkedin &&
 
             <li
               className="sm:text-2xl text-xl duration-150 hover:-translate-y-1"
               title="LinkedIn"
             >
               <Link
-                href={IndexData?.social?.linkedin}
+                href={heroData?.social?.linkedin}
                 legacyBehavior
               >
                 <a target="_blank">
@@ -95,13 +99,13 @@ const Hero: FunctionComponent = ({ IndexData }) => {
                 </a>
               </Link>
             </li>}
-          {IndexData?.social?.github &&
+          {heroData?.social?.github &&
 
             <li
               className="sm:text-2xl text-xl duration-150 hover:-translate-y-1"
               title="GitHub"
             >
-              <Link href={IndexData?.social?.github} legacyBehavior>
+              <Link href={heroData?.social?.github} legacyBehavior>
                 <a target="_blank">
                   <FiGithub />
                 </a>

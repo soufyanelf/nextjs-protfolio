@@ -3,19 +3,23 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
-import { IndexData } from "../content/portfolioData";
+import { HomePageDataType } from "../types"
 
-const Home: NextPage = () => {
+interface Props {
+  homePageData: HomePageDataType
+}
+
+const Home: NextPage <Props> = ({ homePageData }) => {
   return (
     <div className="relative py-4 sm:min-h-screen">
       <Head>
-        <title>Ismailium - Layhdi Chabab</title>
+        <title></title>
         <link rel="icon" href="/Fez-Hat.png" />
       </Head>
 
       <main className="p-4 max-w-6xl w-100 m-auto ">
         <Navbar />
-        <Hero IndexData={IndexData} />
+        <Hero heroData={homePageData?.heroData} />
         <Footer />
       </main>
     </div>
