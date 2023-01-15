@@ -27,12 +27,14 @@ const Navbar: FunctionComponent = () => {
           >
             <Link href="/projects">Projects</Link>
           </li>
+          {/* 
           <li
             className="font-semibold text-black text-sm dark:text-gray-300"
             title="Get in touch"
           >
             <Link href="/get-in-touch">Get in touch</Link>
           </li>
+          */}
         </ul>
       </div>
     </nav>

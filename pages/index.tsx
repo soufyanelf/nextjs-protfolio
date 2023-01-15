@@ -4,22 +4,23 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import { HomePageDataType } from "../types"
+import { parse_YAML_file } from "../services/parser";
 
 interface Props {
-  homePageData: HomePageDataType
+  profile: HomePageDataType
 }
 
-const Home: NextPage <Props> = ({ homePageData }) => {
+const Home: NextPage <Props> = ({ profile }) => {
   return (
     <div className="relative py-4 sm:min-h-screen">
       <Head>
-        <title></title>
+        <title>{profile?.title}</title>
         <link rel="icon" href="/Fez-Hat.png" />
       </Head>
 
-      <main className="p-4 max-w-6xl w-100 m-auto ">
+      <main className="p-4 max-w-6xl w-100 m-auto">
         <Navbar />
-        <Hero heroData={homePageData?.heroData} />
+        <Hero heroData={profile?.heroData} />
         <Footer />
       </main>
     </div>
@@ -27,3 +28,12 @@ const Home: NextPage <Props> = ({ homePageData }) => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+  const { data:profile }: any = await parse_YAML_file("profile.yaml");
+  return {
+    props: {
+      profile
+    },
+  };
+};

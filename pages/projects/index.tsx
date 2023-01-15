@@ -2,11 +2,10 @@ import { NextPage } from "next";
 import Head from "next/head";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-
 import ProjectsSection from "../../components/ProjectsSection";
 import { parse_YAML_file } from "../../services/parser";
 
-const Projects: NextPage = ({ data }: any) => {
+const Projects: NextPage = ({ projects }: any) => {
   return (
     <div className="relative py-4 sm:min-h-screen min-h-screen">
       <Head>
@@ -16,7 +15,7 @@ const Projects: NextPage = ({ data }: any) => {
 
       <main className="p-4 max-w-6xl w-100 m-auto ">
         <Navbar />
-        <ProjectsSection projects={data} />
+        <ProjectsSection projects={projects} />
         <Footer />
       </main>
     </div>
@@ -26,8 +25,10 @@ const Projects: NextPage = ({ data }: any) => {
 export default Projects;
 
 export const getStaticProps = async () => {
-  const { data }: any = await parse_YAML_file("projects.yaml");
+  const { data:projects }: any = await parse_YAML_file("projects.yaml");
   return {
-    props: { data },
+    props: {
+      projects
+    },
   };
 };

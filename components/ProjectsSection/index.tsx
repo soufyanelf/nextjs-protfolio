@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 import { FiLoader } from "react-icons/fi";
-
 import { AiOutlineLink, AiOutlineGithub } from "react-icons/ai";
+
 const ProjectsSection = ({ projects }: any) => {
   const [projectsLength, setProjectsLength] = useState(3);
   const [loading, setLoading] = useState(false);
