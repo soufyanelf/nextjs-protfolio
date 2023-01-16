@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import ProjectsSection from "../../components/ProjectsSection";
 import { parse_YAML_file } from "../../services/parser";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const Projects: NextPage = ({ projects }: any) => {
   return (
