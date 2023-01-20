@@ -1,23 +1,28 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import AboutSection from "../../components/AboutSection";
+import { parse_YAML_file } from "../../services/parser";
+import { AboutPageDataType } from "../../types"
 
-const About: NextPage = () => {
+
+export const getStaticProps = async () => {
+  const { data: about }: any = await parse_YAML_file("about.yaml");
+
+  return {
+    props: {
+      about
+    },
+  };
+};
+
+interface Props {
+  about: AboutPageDataType
+}
+
+const About: NextPage<Props> = ({ about }) => {
   return (
-    <div className="relative py-4 sm:min-h-screen min-h-screen">
-      <Head>
-        <title>Ismailium - Who am i?</title>
-        <link rel="icon" href="/Fez-Hat.png" />
-      </Head>
-
-      <main className="p-4 max-w-6xl w-100 m-auto ">
-        <Navbar />
-        <AboutSection />
-        <Footer />
-      </main>
-    </div>
+    <>
+      <AboutSection aboutData={about?.aboutData} />
+    </>
   );
 };
 

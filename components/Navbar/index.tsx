@@ -7,11 +7,11 @@ const Navbar: FunctionComponent = () => {
     <nav className="flex justify-between items-center sm:flex-row flex-col gap-4">
       <div className="flex justify-center items-center gap-2">
         <h2 className="text-xl font-bold" title="Ismailium - Layhdi Chabab :)">
-          <Link href="/">Ismailium</Link>
+          <Link href="/">Soufyan.me</Link>
         </h2>
-        <div>
+        {/* <div>
           <ThemeToggler />
-        </div>
+        </div> */}
       </div>
       <div>
         <ul className="flex justify-center items-center gap-6">

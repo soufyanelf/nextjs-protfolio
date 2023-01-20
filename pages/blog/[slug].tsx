@@ -32,19 +32,9 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function PostPage({ frontmatter, content }) {
     return (
-        <div className="relative py-4 sm:min-h-screen">
-            <Head>
-                <title></title>
-                <link rel="icon" href="/Fez-Hat.png" />
-            </Head>
-            <main className="p-4 max-w-6xl w-100 m-auto">
-                <Navbar />
-                <div className='prose mx-auto'>
-                    <h1>{frontmatter.title}</h1>
-                    <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-                </div>
-                <Footer />
-            </main>
+        <div className='prose mx-auto'>
+            <h1>{frontmatter.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
         </div>
     );
 }

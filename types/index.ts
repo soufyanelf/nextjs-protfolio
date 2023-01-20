@@ -17,3 +17,15 @@ export interface HeroDataType {
     title: string;
     heroData: HeroDataType;
   }
+
+
+
+  export interface AboutDataType {
+    description: string;
+  };
+
+  export interface AboutPageDataType {
+    title: string;
+    aboutData: AboutDataType
+  }
+  
