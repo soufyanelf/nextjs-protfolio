@@ -2,7 +2,7 @@
 title: 'Next.js Supabase adding a GitHub login'
 metaTitle: 'Next.js Supabase adding a GitHub login'
 metaDesc: 'How to add a GitHub login to Next.js using Supabase social authentication'
-socialImage: images/11-12-2021.jpg
+socialImage: images/bg.png
 date: '2021-12-11'
 tags:
   - nextjs

@@ -16,7 +16,6 @@ const Projects: NextPage = ({ projects }: any) => {
       <main className="p-4 max-w-6xl w-100 m-auto ">
         <Navbar />
         <ProjectsSection projects={projects} />
-        <Footer />
       </main>
     </div>
   );

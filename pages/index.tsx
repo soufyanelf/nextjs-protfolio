@@ -21,7 +21,6 @@ const Home: NextPage <Props> = ({ profile }) => {
       <main className="p-4 max-w-6xl w-100 m-auto">
         <Navbar />
         <Hero heroData={profile?.heroData} />
-        <Footer />
       </main>
     </div>
   );

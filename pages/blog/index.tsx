@@ -34,10 +34,9 @@ export default function Home({ posts }) {
                 <title></title>
                 <link rel="icon" href="/Fez-Hat.png" />
             </Head>
-
             <main className="p-4 max-w-6xl w-100 m-auto">
                 <Navbar />
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-4 md:p-0'>
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-4 md:p-0 mt-20'>
                     {posts.map(({ slug, frontmatter }) => (
                         <div
                             key={slug}
@@ -55,7 +54,6 @@ export default function Home({ posts }) {
                         </div>
                     ))}
                 </div>
-                <Footer />
             </main>
         </div>
     );
