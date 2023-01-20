@@ -1,4 +1,4 @@
-# Ismailium - Portfolio/Personal Website
+# Portfolio/Personal Website
 My personal portfolio website, Built with all the love using Next.js and Tailwind CSS.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -42,5 +42,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-&copy; 2022 - Made With ❤️ By <a href="https://ismailium.vercel.app/"><b>Ismailium</b></a>, using <a href="https://nextjs.org/"><b>Next.js</b></a> and <a href="https://tailwindcss.com/"><b>Tailwind CSS</b></a>, Deployed on <a href="https://vercel.com/"><b>Vercel</b></a>.
