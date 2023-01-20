@@ -1,9 +1,8 @@
+import type { NextPage, GetStaticProps } from "next";
 import fs from 'fs';
 import matter from 'gray-matter';
 import md from 'markdown-it';
-import Head from "next/head";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import { postDataType } from "../../types"
 
 export async function getStaticPaths() {
     const files = fs.readdirSync('./content/blog/posts/');
@@ -18,23 +17,35 @@ export async function getStaticPaths() {
     };
 }
 
-
-export async function getStaticProps({ params: { slug } }) {
+interface IParams {
+    slug: string;
+}
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { slug } = context.params;
     const fileName = fs.readFileSync(`./content/blog/posts/${slug}.md`, 'utf-8');
-    const { data: frontmatter, content } = matter(fileName);
+    const { data: postHeaderData, content } = matter(fileName);
+
     return {
         props: {
-            frontmatter,
-            content,
-        },
+            post: {
+                ...postHeaderData,
+                content
+            }
+        }
     };
 }
 
-export default function PostPage({ frontmatter, content }) {
+interface Props {
+    post: postDataType
+}
+
+const PostPage: NextPage<Props> = ({ post }) => {
     return (
         <div className='prose mx-auto'>
-            <h1>{frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+            <h1>{post.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: md().render(post?.content) }} />
         </div>
     );
 }
+
+export default PostPage;

@@ -18,8 +18,6 @@ export interface HeroDataType {
     heroData: HeroDataType;
   }
 
-
-
   export interface AboutDataType {
     description: string;
   };
@@ -27,5 +25,22 @@ export interface HeroDataType {
   export interface AboutPageDataType {
     title: string;
     aboutData: AboutDataType
+  }
+  
+
+  export interface postDataType {
+    title: string;
+    metaTitle: string;
+    metaDesc: string;
+    socialImage: string;
+    date: string;
+    tags: Array<string>;
+    slug?: string;
+    content?: string;
+  };
+
+  export interface BlogPageDataType {
+    title: string;
+    aboutData: AboutDataType;
   }
   
